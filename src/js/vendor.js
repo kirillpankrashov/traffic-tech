@@ -1,0 +1,30 @@
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+import svg4everybody from 'svg4everybody';
+import $ from 'jquery';
+import objectFitImages from 'object-fit-images';
+import gsap from 'gsap';
+import 'slick-carousel';
+import videojs from 'video.js';
+import 'videojs-flash';
+import 'videojs-youtube';
+import objectFitVideos from 'object-fit-videos';
+import barba from '@barba/core';
+import barbaRouter from '@barba/router';
+import scrollDepth from 'scroll-depth';
+
+svg4everybody();
+objectFitImages();
+
+window.$ = $;
+window.jQuery = $;
+window.gsap = gsap;
+window.barba = barba;
+window.barbaRouter = barbaRouter;
+window.objectFitImages = objectFitImages;
+window.objectFitVideos = objectFitVideos;
+window.scrollDepth = scrollDepth;
+window.videoJs = videojs;
+require('ninelines-ua-parser');
+require('sticky-kit/dist/sticky-kit');
+require('lazy-blur.js/dist/lazy-blur.min');

@@ -1,0 +1,100 @@
+.toc {
+	border: 1px solid $color-silver;
+	border-radius: 10px;
+	padding: 45px 35px;
+
+	&__title {
+		margin-bottom: 30px;
+		font-weight: 700;
+		font-size: 22px;
+		line-height: 1;
+	}
+
+	&__list {
+		font-size: 18px;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 15px;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+
+		svg {
+			margin-right: 24px;
+			width: 16px;
+			height: 15px;
+		}
+	}
+
+	@include desktop {
+		&__link {
+			&:hover {
+				text-decoration: underline;
+				color: $color-sys;
+			}
+		}
+	}
+
+	@include laptop {
+		border-radius: vw(10);
+		padding: vw(45) vw(35);
+
+		&__title {
+			margin-bottom: vw(30);
+			font-size: vw(22);
+		}
+
+		&__list {
+			font-size: vw(18);
+		}
+
+		&__item {
+			&:not(:last-child) {
+				margin-bottom: vw(15);
+			}
+		}
+
+		&__link {
+			svg {
+				margin-right: vw(24);
+				width: vw(16);
+				height: vw(15);
+			}
+		}
+	}
+
+	@include devices {
+		border-radius: vmin(10);
+		padding: vmin(35) vmin(40);
+
+		&__title {
+			margin-bottom: vmin(20);
+			font-size: vmin(22);
+		}
+
+		&__list {
+			font-size: vmin(18);
+		}
+
+		&__item {
+			&:not(:last-child) {
+				margin-bottom: vmin(12);
+			}
+		}
+
+		&__link {
+			color: $color-black;
+
+			svg {
+				margin-right: vmin(24);
+				width: vmin(16);
+				height: vmin(15);
+			}
+		}
+	}
+}

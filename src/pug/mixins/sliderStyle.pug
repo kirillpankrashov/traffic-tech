@@ -1,0 +1,26 @@
+mixin slider(data)
+	.slider-style
+		if data.type === 'multi'
+			.slider-style__slides.slider-style__slides--multi.js-slider-multi
+				each slide in data.slides
+					.slider-style__item
+						img(src=slide.src alt="Фото")
+						span
+							!= slide.text
+		else
+			.slider-style__slides.js-slider(class=data.type ? `slider-style__slides--${data.type}` : '')
+				each slide in data.slides
+					.slider-style__item
+						img(src=slide.src alt="Фото")
+						span
+							!= slide.text
+		.slider-style__text
+			!= data.text
+
+		.slider-style__controls
+			button.slider-style__prev.js-slider-prev
+				+svg('arrow-prev')
+			.slider-style__total
+				| #[span.js-slider-current 1] из #[span.js-slider-total 2]
+			button.slider-style__next.js-slider-next
+				+svg('arrow-next')

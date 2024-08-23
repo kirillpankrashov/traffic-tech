@@ -1,0 +1,9 @@
+mixin toc(data)
+	.toc&attributes(attributes)
+		.toc__title Меню
+		ul.toc__list
+			each item in data
+				li.toc__item
+					a.toc__link.js-to-anchor(href= item.url)
+						+svg("icon-arrow-right")
+						span= item.title

@@ -1,0 +1,50 @@
+extends pug/base
+prepend vars
+	- title = 'Title'
+	- description = 'Description'
+	- image = '/images/share/' // url картинки для шера
+
+append vars
+	- link.appleTouchIcon180x180 = 'favicon/apple-touch-icon.png'
+	- link.icon32x32 = 'favicon/favicon-32x32.png'
+	- link.icon16x16 = 'favicon/favicon-16x16.png'
+	- link.manifest = 'favicon/site.webmanifest'
+	- link.maskIcon.href = 'favicon/safari-pinned-tab.svg'
+	- link.maskIcon.color = '#5bbad5'
+	- meta.msapplicationTileColor = '#ffffff'
+	- meta.msapplicationTileImage = 'favicon/mstile-144x144.png'
+	- meta.themeColor = '#ffffff'
+	- body.attrs = {"data-barba": "wrapper"}
+
+block content
+	.section.payout-page
+		include pug/components/header
+		.main-box
+			include pug/components/sidebar
+			.main-box__container
+				.main-box__section
+					+top-text('Pay Out')
+					table.main-box__table
+						thead
+							tr
+								th
+									p Статус
+								th
+									p ID
+								th
+									p Номер Карты/Счёта
+								th
+									p ID Клиент
+								th
+									p Отправляем
+								th
+									p Получаем
+								th
+									p Метод
+								th
+									p Коментарий
+								th
+									p Создан
+								th
+									p Подтвердить
+						tbody

@@ -1,0 +1,201 @@
+.footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	display: flex;
+	justify-content: space-between;
+	margin-top: auto;
+	border-top: 1px solid #eaeaea;
+	padding: 28px 34px 31px 21px;
+	font-family: $font-graphik-rbc-lc;
+	font-size: 12px;
+	line-height: (14 / 12);
+	color: $color-black;
+
+	&__container {
+		display: inherit;
+		flex-wrap: inherit;
+		align-items: baseline;
+		justify-content: inherit;
+		width: 100%;
+
+		@include devices {
+			flex-direction: column;
+
+			.footer__joint {
+				order: 2;
+			}
+
+			.footer__social {
+				order: 1;
+				margin-bottom: vmin(29);
+			}
+
+			.footer__inf {
+				order: 3;
+			}
+		}
+	}
+
+	&__inf {
+		.game & {
+			opacity: 0;
+		}
+
+		@include desktop {
+			position: relative;
+			font-family: $font-graphik-rbc-lc;
+		}
+
+		@include devices {
+			margin-top: vmin(26);
+			width: 100%;
+			font-weight: 400;
+			font-size: vmin(12);
+			text-align: center;
+
+			.test &,
+			.game & {
+				display: none;
+			}
+		}
+	}
+
+	&__social {
+		position: relative;
+		top: 2px;
+		display: flex;
+		flex-shrink: 0;
+		color: $color-white;
+
+		.is-end & {
+			color: $color-black;
+		}
+
+		@include desktop {
+			position: relative;
+		}
+
+		@include devices {
+			top: 0;
+			order: 2;
+			margin-bottom: vmin(23);
+			width: 100%;
+
+			.test &,
+			.game & {
+				order: 3;
+				margin-top: vmin(19);
+				margin-bottom: vmin(22);
+			}
+
+			.is-article &,
+			.is-cards & {
+				display: none;
+			}
+		}
+	}
+
+	&__share {
+		// stylelint-disable-next-line
+		font-size: vw(12) !important;
+
+		.share__btn {
+			color: $color-white;
+
+			@include devices {
+				width: vmin(60);
+			}
+		}
+
+		.share__btn-txt {
+			@include devices {
+				display: none;
+			}
+		}
+
+		.share__btn-ico {
+			display: none;
+			margin-right: vmin(22);
+			margin-left: vmin(22);
+
+			@include devices {
+				display: flex;
+				justify-content: center;
+
+				svg {
+					width: vmin(24);
+					height: vmin(24);
+				}
+			}
+		}
+
+		.share__title {
+			@include devices {
+				display: none;
+			}
+		}
+
+		@include desktop-xl {
+			// stylelint-disable-next-line
+			font-size: px(12) !important;
+		}
+
+		@include devices {
+			flex-basis: 100%;
+			justify-content: center;
+		}
+	}
+
+	&__joint {
+		order: 1;
+		border-top: solid 1px #ddd;
+		border-bottom: solid 1px #ddd;
+		padding: vmin(7) 0 vmin(5);
+		width: 100%;
+		font-size: vmin(15);
+		line-height: vmin(28);
+		letter-spacing: 1px;
+		text-align: center;
+
+		@include devices {
+			.is-end & {
+				border-color: $color-black;
+				color: $color-black;
+			}
+		}
+	}
+
+	.is-end & {
+		border-top: none;
+		background-color: $color-white;
+	}
+
+	.is-article &,
+	.is-podcast &,
+	.is-checklist &,
+	.is-video &,
+	.is-cards &,
+	.is-article-style & {
+		position: relative;
+	}
+
+	@include devices {
+		position: relative;
+		flex-wrap: wrap;
+		border: 0;
+		padding: vmin(22) 0 vmin(24);
+		font-size: vmin(12);
+
+		.test &,
+		.game & {
+			padding-bottom: 0;
+		}
+
+		.is-article & {
+			padding: vmin(68) 0 vmin(24);
+		}
+	}
+}

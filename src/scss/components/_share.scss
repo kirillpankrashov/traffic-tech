@@ -1,0 +1,193 @@
+.share {
+	display: flex;
+	align-items: center;
+	font-size: vw(14);
+
+	> * {
+		margin-right: vw(10);
+
+		@include desktop-xl {
+			margin-right: px(10);
+		}
+	}
+
+	&__btn {
+		border: none;
+		padding: 0;
+		font-weight: 700;
+		background-color: transparent;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@include desktop {
+			border-bottom: 1px solid $color-black;
+
+			&:hover {
+				border-bottom: 1px solid $color-white;
+			}
+		}
+	}
+
+	@include desktop-xl {
+		font-size: px(14);
+	}
+}
+
+.share-test {
+	display: flex;
+	align-items: center;
+	border: 1px solid rgba($color-black, 0.3);
+	width: vw(336);
+	height: vw(40);
+
+	&__btn {
+		display: flex;
+		flex: 1 1;
+		align-items: center;
+		justify-content: center;
+		border: none;
+		border-right: 1px solid rgba($color-black, 0.3);
+		height: vw(40);
+		background-color: transparent;
+
+		&:last-child {
+			border-right: none;
+		}
+
+		&--vk {
+			svg {
+				width: vw(28);
+				height: vw(28);
+
+				@include desktop-xl {
+					width: px(28);
+					height: px(28);
+				}
+
+				@include devices {
+					width: vmin(28);
+					height: vmin(28);
+				}
+			}
+		}
+
+		&--ok {
+			svg {
+				width: vw(22);
+				height: vw(26);
+
+				@include desktop-xl {
+					width: px(22);
+					height: px(26);
+				}
+
+				@include devices {
+					width: vmin(25);
+					height: vmin(27);
+				}
+			}
+		}
+
+		&--fb {
+			svg {
+				width: vw(30);
+				height: vw(28);
+
+				@include desktop-xl {
+					width: px(30);
+					height: px(28);
+				}
+
+				@include devices {
+					width: vmin(24);
+					height: vmin(24);
+				}
+			}
+		}
+
+		&--tw {
+			svg {
+				width: vw(28);
+				height: vw(28);
+
+				@include desktop-xl {
+					width: px(28);
+					height: px(28);
+				}
+
+				@include devices {
+					width: vmin(24);
+					height: vmin(24);
+				}
+			}
+		}
+
+		@include desktop-xl {
+			height: px(40);
+		}
+
+		@include desktop {
+			&:hover {
+				color: $color-white;
+				background-color: $color-black;
+			}
+		}
+
+		@include devices {
+			height: vmin(40);
+		}
+	}
+
+	&--game {
+		margin-top: vw(40);
+
+		.share-test__btn {
+			color: $color-white;
+
+			@include desktop {
+				border-right: 1px solid rgba($color-white, 0.3);
+
+				&:last-child {
+					border-right: none;
+				}
+			}
+
+			@include devices {
+				border: none;
+			}
+		}
+
+		@include desktop-xl {
+			margin-top: px(40);
+		}
+
+		@include desktop {
+			border: 1px solid rgba($color-white, 0.3);
+		}
+
+		@include devices {
+			border: none;
+		}
+	}
+
+	@include desktop-xl {
+		width: px(328);
+		height: px(40);
+	}
+
+	@include devices {
+		flex-wrap: wrap;
+		width: vmin(328);
+		height: vmin(40);
+
+		&__text {
+			flex-shrink: 0;
+			margin-bottom: vmin(5);
+			width: 100%;
+			font-size: 15px;
+			line-height: 15px;
+		}
+	}
+}

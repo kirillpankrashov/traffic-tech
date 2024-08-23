@@ -1,0 +1,204 @@
+.home {
+	padding: 77px 0 129px;
+	background: $color-white;
+
+	&__inner {
+		position: relative;
+		overflow: hidden;
+
+		@include desktop {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 94px 0 0;
+			height: 100%;
+		}
+
+		@include mobile {
+			margin-bottom: vmin(43);
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		top: 0;
+		overflow: hidden;
+		width: 100vw;
+		height: 100%;
+
+		&::before {
+			// stylelint-disable-next-line
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 1460.21px;
+			height: 526.2px;
+			//background: #313131 url("../images/home/bg.png") center left/contain no-repeat;
+
+			@include desktop {
+				margin-top: -279px;
+				margin-left: -774px;
+			}
+
+			@include devices {
+				left: auto;
+				right: 0;
+				top: vmin(-64);
+				width: 100%;
+				height: 1403px;
+				//background: url("../images/home/bg-mobile.jpg") top center/cover no-repeat;
+			}
+		}
+
+		@include devices {
+			left: 0;
+			top: 0;
+
+			@include mobile {
+				overflow: auto;
+				height: 100%;
+			}
+		}
+	}
+
+	&__container {
+		position: relative;
+		margin: 0 auto;
+		padding: 0 25px;
+		width: 100%;
+		max-width: 1161px;
+
+		@include devices {
+			padding: 0;
+			max-width: 100%;
+		}
+	}
+
+	&__title {
+		margin: 0 0 79px;
+		padding-left: 2px;
+		width: 730px;
+		font-weight: 400;
+		font-size: 49px;
+		line-height: 46px;
+		letter-spacing: 0;
+		color: $color-black;
+
+		b {
+			font-family: $font-graphik-rbc-lc;
+			font-weight: 700;
+		}
+
+		.theme-black & {
+			color: $color-black;
+		}
+
+		@include devices {
+			margin-bottom: vmin(66);
+			max-width: 100%;
+			padding-left: 0;
+			font-size: vmin(28);
+			line-height: vmin(30);
+		}
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin: -10px;
+		margin-top: -16px;
+
+		@include devices {
+			margin: 0;
+		}
+	}
+
+	&__item {
+		flex-shrink: 0;
+		padding: 10px;
+		width: 33.333%;
+		min-height: 440px;
+
+		&--double {
+			width: 66.6666%;
+
+			.card__title {
+				font-size: 36px;
+				line-height: 37px;
+
+				@include devices {
+					font-size: vmin(25);
+					line-height: vmin(28);
+				}
+			}
+
+			.card__preview {
+				@include desktop {
+					right: 23px;
+					top: 32px;
+				}
+			}
+
+			.card__text {
+				@include devices {
+					font-size: vmin(16);
+					line-height: vmin(20);
+				}
+			}
+		}
+
+		@include devices {
+			margin-bottom: vmin(22);
+			padding: 0;
+			width: 100%;
+			min-height: auto;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&--improved {
+				min-height: 0;
+			}
+
+			&--2 {
+				order: -1;
+			}
+		}
+	}
+
+	&__banner {
+		display: block;
+		margin-top: 50px;
+		margin-bottom: 27px;
+		padding-right: 4px;
+
+		img {
+			transform: translateZ(0);
+		}
+
+		@include desktop {
+			transition: opacity 0.3s linear;
+
+			&:hover {
+				opacity: 0.9;
+			}
+		}
+
+		@include devices {
+			margin-top: vmin(22);
+			margin-bottom: vmin(27);
+			padding-right: 1px;
+		}
+	}
+
+	@include laptop-h {
+		height: auto;
+	}
+
+	@include devices {
+		padding: vmin(37) vmin(19) vmin(3);
+		height: auto;
+	}
+}

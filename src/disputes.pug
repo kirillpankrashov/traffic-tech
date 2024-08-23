@@ -1,0 +1,60 @@
+extends pug/base
+prepend vars
+	- title = 'Title'
+	- description = 'Description'
+	- image = '/images/share/' // url картинки для шера
+
+append vars
+	- link.appleTouchIcon180x180 = 'favicon/apple-touch-icon.png'
+	- link.icon32x32 = 'favicon/favicon-32x32.png'
+	- link.icon16x16 = 'favicon/favicon-16x16.png'
+	- link.manifest = 'favicon/site.webmanifest'
+	- link.maskIcon.href = 'favicon/safari-pinned-tab.svg'
+	- link.maskIcon.color = '#5bbad5'
+	- meta.msapplicationTileColor = '#ffffff'
+	- meta.msapplicationTileImage = 'favicon/mstile-144x144.png'
+	- meta.themeColor = '#ffffff'
+	- body.attrs = {"data-barba": "wrapper"}
+
+block content
+	.section.disputes-page
+		include pug/components/header
+		.main-box
+			include pug/components/sidebar
+			.main-box__container
+				.main-box__section
+					+top-text('Pay Out')
+					table.main-box__table
+						thead
+							tr
+								th
+									p Сделка
+								th
+									p Сумма
+								th
+									p Карта
+
+								th
+									p Устройство
+
+						tbody
+							tr
+								th
+									p спор принят
+								th
+									p 50 usd
+								th
+									p 0000 0000 0000 0000
+
+								th
+									p Устройство
+							tr
+								th
+									p спор принят
+								th
+									p 10 usd
+								th
+									p 0000 0000 0000 0000
+
+								th
+									p Устройство

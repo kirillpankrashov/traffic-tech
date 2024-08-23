@@ -1,0 +1,243 @@
+// *,
+// *::before,
+// *::after {
+// 	box-sizing: inherit;
+// }
+* {
+    box-sizing: border-box;
+    outline: none;
+    &::after,
+    &::before {
+        box-sizing: border-box;
+    }
+}
+
+html {
+	position: relative;
+	overflow-x: hidden;
+	min-height: 100vh;
+	box-sizing: border-box;
+	font-family: $font-primary;
+	scroll-behavior: smooth;
+
+	&.has-cursor,
+	&.has-cursor * {
+		// stylelint-disable-next-line
+		cursor: none !important;
+	}
+
+	&.is-lock-scroll,
+	&.is-lock-scroll body {
+		// stylelint-disable-next-line
+		//position: fixed;
+		overflow: hidden;
+		height: 100vh;
+	}
+}
+
+body {
+	font-family: $font-graphik-rbc-lc;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	text-decoration-skip: objects;
+	text-rendering: optimizeLegibility;
+	text-size-adjust: 100%;
+	color: $color-black;
+}
+
+main {
+	flex: 1;
+}
+
+p {
+	margin: 0;
+}
+
+a,
+button {
+	outline: none;
+	transition: $duration-normal;
+	cursor: pointer;
+}
+
+a {
+	text-decoration: none;
+	color: currentColor;
+}
+
+svg {
+	display: block;
+	flex: 0 0 auto;
+	width: 100%;
+	height: 100%;
+	fill: currentColor;
+}
+
+figure,
+picture {
+	display: inline-block;
+	margin: 0;
+	line-height: 0;
+
+	img {
+		width: 100%;
+		transform: translateZ(0);
+	}
+}
+
+img {
+	vertical-align: top;
+	max-width: 100%;
+	transform: translateZ(0);
+	user-select: none;
+}
+
+img[draggable="false"] {
+	pointer-events: none;
+	// stylelint-disable-next-line
+	-webkit-user-drag: none;
+}
+
+fieldset {
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+video {
+	outline: none;
+	width: 100%;
+	height: 100%;
+}
+
+iframe {
+	display: block;
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	text-align: center;
+	background-color: transparent;
+	transition: $duration-normal;
+	user-select: none;
+
+	&__content {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 100%;
+		color: currentColor;
+		transform: translateZ(0);
+	}
+}
+
+.js-lazy-load:not(.is-loaded) {
+	max-height: 50vh;
+}
+
+.site {
+	display: flex;
+	flex-direction: column;
+	// stylelint-disable-next-line
+	min-height: 100vh; // fallback
+	// stylelint-disable-next-line
+	min-height: var(--vh);
+}
+
+.nowrap {
+	display: inline-block;
+	white-space: nowrap;
+}
+
+.page {
+	@include devices {
+		// stylelint-disable-next-line
+		margin-top: 0 !important;
+		// stylelint-disable-next-line
+		padding-top: vmin(135) !important;
+		// stylelint-disable-next-line
+		padding-bottom: vmin(0) !important;
+	}
+}
+
+.page.podcast,
+.page.article,
+.page.case {
+	@include devices {
+		// stylelint-disable-next-line
+		padding-top: vmin(100) !important;
+	}
+}
+
+.page.game {
+	@include devices {
+		// stylelint-disable-next-line
+		padding-top: vmin(74) !important;
+	}
+}
+
+.cards {
+	@include devices {
+		// stylelint-disable-next-line
+		padding-top: vmin(48) !important;
+	}
+}
+
+/* stylelint-disable */
+/*
+* Немедленно переместите любую анимацию в конечную точку, если пользователь установил свое устройство в положение "prefers reduced motion".
+* Это может привести к плохим(непреднамеренным) последствиям. Удалите по мере необходимости и напишите свой собственный код для prefers-reduced-motion.
+*/
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*:before,
+	*:after {
+		animation-duration: 0.001s !important;
+		animation-delay: 0s !important;
+		transition-duration: 0.001s !important;
+		transition-delay: 0s !important;
+	}
+}
+/* stylelint-enable */
+
+.page-container {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+
+	@include devices {
+		overflow-x: hidden;
+	}
+}
+
+.italic {
+	font-style: italic;
+}
+
+.share-container {
+	position: fixed;
+	left: 50%;
+	top: 0;
+	z-index: -10000;
+	width: 1366px;
+	transform: translateX(-50%);
+	pointer-events: none;
+}
+
+.is-disabled {
+	pointer-events: none;
+}

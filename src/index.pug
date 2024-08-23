@@ -1,0 +1,64 @@
+extends pug/base
+prepend vars
+	- title = 'Title'
+	- description = 'Description'
+	- image = '/images/share/' // url картинки для шера
+
+append vars
+	- link.appleTouchIcon180x180 = 'favicon/apple-touch-icon.png'
+	- link.icon32x32 = 'favicon/favicon-32x32.png'
+	- link.icon16x16 = 'favicon/favicon-16x16.png'
+	- link.manifest = 'favicon/site.webmanifest'
+	- link.maskIcon.href = 'favicon/safari-pinned-tab.svg'
+	- link.maskIcon.color = '#5bbad5'
+	- meta.msapplicationTileColor = '#ffffff'
+	- meta.msapplicationTileImage = 'favicon/mstile-144x144.png'
+	- meta.themeColor = '#ffffff'
+	- body.attrs = {"data-barba": "wrapper"}
+
+block content
+	.section.dashboard.dashboard-page
+		include pug/components/header
+		.main-box
+			include pug/components/sidebar
+			
+			.main-box__container
+				.main-box__section
+					+top-text('Всего')
+					.down-side-grid-6
+						.boxdown.one
+							h1 Заявок 
+							h1.text-stats 1734
+						.boxdown.one
+							h1 Оборот в USDT
+							h1.text-stats 1257780
+						.boxdown.one
+							h1 Конверсия
+
+							h1.text-stats 98.34 %
+						.boxdown.one
+							h1 Активные Карты
+							h1.text-stats 5
+						.boxdown.one
+							h1 Неактивные Карты
+							h1.text-stats 47
+						.boxdown.one
+							h1 Активные  устройства
+							h1.text-stats 5 / 7
+				.main-box__section
+					+top-text('Всего')
+					table.main-box__table
+						thead
+							tr
+								th
+									p Дата
+								th 
+									p Объем в USDT
+								th 
+									p Объем в фиате
+								th 
+									p Количество ордеров
+								th 
+									p Рассчетная прибыль 
+						tbody
+							

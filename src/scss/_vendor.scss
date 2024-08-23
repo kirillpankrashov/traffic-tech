@@ -1,0 +1,18 @@
+@import "../../node_modules/normalize.css/normalize";
+@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "../../node_modules/video.js/dist/video-js";
+
+.video-js {
+	width: 100%;
+	height: 100%;
+}
+
+.vjs-big-play-button {
+	// stylelint-disable-next-line
+	position: absolute !important;
+	// stylelint-disable-next-line
+	left: 50% !important;
+	// stylelint-disable-next-line
+	top: 50% !important;
+	transform: translate(-50%, -50%);
+}

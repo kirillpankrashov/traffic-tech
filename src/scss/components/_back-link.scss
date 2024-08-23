@@ -1,0 +1,65 @@
+.back-link {
+	display: inline-flex;
+	align-items: center;
+	margin-top: vw(27);
+	margin-bottom: vw(16);
+	margin-left: vw(24);
+	font-size: vw(13);
+
+	svg {
+		margin-right: vw(3);
+		width: vw(9);
+		height: vw(7);
+		transform: translateX(0);
+		transition: transform $transition-base;
+
+		@include desktop-xl {
+			margin-right: px(3);
+			width: px(9);
+			height: px(7);
+		}
+
+		@include devices {
+			margin-right: 3px;
+			width: 9px;
+			height: 11px;
+		}
+	}
+
+	&--white {
+		color: #fff;
+	}
+
+	&--test {
+		position: absolute;
+		left: 0;
+		top: vw(107);
+		z-index: 1;
+
+		@include desktop-xl {
+			top: px(107);
+		}
+	}
+
+	@include desktop {
+		&:hover {
+			svg {
+				transform: translateX(-50%);
+			}
+		}
+	}
+
+	@include desktop-xl {
+		margin-top: px(27);
+		margin-bottom: px(16);
+		margin-left: px(24);
+		font-size: px(13);
+	}
+
+	@include devices {
+		position: static;
+		margin: vmin(21);
+		font-size: vmin(13);
+		line-height: vmin(15);
+	}
+}

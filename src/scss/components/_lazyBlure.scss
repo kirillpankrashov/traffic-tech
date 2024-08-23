@@ -1,0 +1,25 @@
+.lazyBlure {
+	width: 100%;
+}
+
+.lazy-blur {
+	position: relative;
+	overflow: hidden;
+}
+
+.lazy-blur img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.lazy-blur__imgL {
+	opacity: 0;
+	transition: opacity 0.3s linear;
+}
+
+.done > .lazy-blur__imgL {
+	opacity: 1;
+}

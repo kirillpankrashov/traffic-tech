@@ -1,0 +1,314 @@
+.card {
+	$p: &;
+
+	position: relative;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgba($color-black, 0.2);
+	padding: 24px 29px 51px;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	background: $color-white;
+	transition: border-color $transition-base, opacity $transition-base;
+
+	&__category {
+		margin: 0;
+		font-family: $font-graphik-rbc-lc;
+		font-weight: 400;
+		font-size: 15px;
+		line-height: (17 / 15);
+		color: $read-else;
+
+		&--gray {
+			// stylelint-disable-next-line
+			color: #494949 !important;
+
+			@include devices {
+				margin-bottom: vmin(20);
+			}
+		}
+
+		&--white {
+			color: $color-white;
+
+			@include devices {
+				margin-bottom: vmin(20);
+			}
+		}
+
+		@include devices {
+			font-size: vmin(15);
+			line-height: vmin(18);
+		}
+	}
+
+	&__bg {
+		position: absolute;
+		left: -1px;
+		right: -1px;
+		top: -1px;
+		bottom: -1px;
+		z-index: -1;
+		opacity: 1;
+		transition: opacity $transition-base;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			background-color: rgba($color-black, 0.4);
+		}
+
+		img {
+			position: absolute;
+			left: 0;
+			right: 0;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+			font-family: "object-fit:cover";
+			object-fit: cover;
+		}
+	}
+
+	&__announcement {
+		margin: 71px 0 0;
+		font-family: $font-graphik-rbc-lc;
+		font-size: 15px;
+		line-height: (18 / 15);
+		color: #008000;
+
+		@include devices {
+			margin-top: vmin(70);
+			font-size: vmin(15);
+			line-height: vmin(18);
+		}
+	}
+
+	&__image {
+		position: absolute;
+		right: 30px;
+		top: 26px;
+		width: 140px;
+		height: 110px;
+		pointer-events: none;
+
+		img {
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+
+		@include devices {
+			left: auto;
+			right: vmin(30);
+			top: vmin(35);
+			width: 40%;
+			height: auto;
+		}
+	}
+
+	&__title {
+		margin: auto 0 -1px;
+		max-width: 530px;
+		font-family: $font-graphik-rbc-lc;
+		font-weight: 700;
+		font-size: 25px;
+		line-height: (29 / 25);
+		color: $color-black;
+		transition: color $transition-base;
+
+		span {
+			font-weight: 400;
+			font-size: 20px;
+		}
+
+		&--one {
+			min-height: 74px;
+		}
+
+		@include devices {
+			margin-bottom: vmin(0);
+			min-height: auto;
+			font-size: vmin(22);
+			line-height: vmin(26);
+
+			span {
+				font-size: vmin(20);
+			}
+		}
+	}
+
+	&__text {
+		position: relative;
+		margin-top: 5px;
+		font-family: $font-kazimir-text;
+		font-weight: 400;
+		font-size: 16px;
+		line-height: (20 / 16);
+		color: $color-black;
+
+		@include desktop {
+			.home__item--double & {
+				font-size: 18px;
+				line-height: 26px;
+			}
+		}
+
+		@include devices {
+			position: static;
+			margin-top: 8px;
+			font-size: vmin(16);
+			line-height: vmin(20);
+		}
+	}
+
+	&__inner {
+		@include devices {
+			position: relative;
+			top: vmin(6);
+		}
+	}
+
+	&.is-dark {
+		background-color: $color-black;
+
+		.card__category,
+		.card__title,
+		.card__text {
+			color: $color-white;
+		}
+	}
+
+	&.is-disabled {
+		pointer-events: none;
+
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 4;
+			background-color: rgba($color-white, 0.7);
+		}
+
+		.card__image {
+			z-index: 5;
+		}
+	}
+
+	&--improved {
+		position: relative;
+		border: 0;
+		padding-bottom: 40px;
+
+		.card__title {
+			margin: auto 0 16px;
+
+			@include devices {
+				margin: auto 0 30px;
+			}
+		}
+
+		.card__text {
+			z-index: 2;
+			margin-top: -6px;
+
+			@include devices {
+				margin-top: 0;
+			}
+		}
+
+		@include hover {
+			border-color: $color-mountain-meadow;
+		}
+
+		@include devices {
+			border: 1px solid $color-silver;
+		}
+	}
+
+	.home__item--double & {
+		padding: 29px 28px 50px;
+
+		@include devices {
+			padding: vmin(21) vmin(29) vmin(22);
+		}
+	}
+
+	@include desktop {
+		.card__bg,
+		.card__preview {
+			transition: opacity 0.3s;
+		}
+	}
+
+	@include hover {
+		.card__bg,
+		.card__preview {
+			opacity: 0.8;
+		}
+
+		.card__title {
+			color: $color-mountain-meadow;
+		}
+	}
+
+	@include devices {
+		justify-content: space-between;
+		padding: vmin(30) vmin(27) vmin(22);
+		min-height: vmin(370);
+
+		&--improved {
+			padding-bottom: vmin(30);
+
+			#{$p}__category {
+				order: -2;
+			}
+
+			#{$p}__title {
+				margin-top: vmin(86);
+				margin-bottom: vmin(13);
+			}
+		}
+	}
+}
+
+.card__title--first {
+	// stylelint-disable-next-line
+	margin: auto 0 36px !important;
+
+	@include devices {
+		// stylelint-disable-next-line
+		margin: 140px 0 0px !important;
+	}
+}
+
+.card__title--second {
+	// stylelint-disable-next-line
+	margin: auto 0 66px !important;
+}
+
+.card__text--third {
+	margin-bottom: 40px;
+}
+
+.card--default {
+	opacity: 0.75;
+
+	@include desktop {
+		&:hover {
+			.card__bg {
+				// stylelint-disable-next-line
+				opacity: 0.8 !important;
+			}
+		}
+	}
+}

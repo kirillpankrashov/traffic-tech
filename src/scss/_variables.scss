@@ -1,0 +1,53 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
+
+// COLORS
+$color-black: #000;
+$color-white: #fff;
+$color-gray: #eee;
+$color-alto: #ddd;
+$color-gray-100: #cacaca;
+$color-mountain-meadow: #15b77e;
+$color-sys: #1b8;
+$color-orange: #ff7a00;
+$color-theme: #4b72ee;
+$color-dusty-gray: #999;
+$color-pomegranate: #f23f34;
+$color-silver: #c7c7c7;
+$color-dusty-gray: #999;
+$color-pomegranate: #f23f34;
+$color-silver: #c7c7c7;
+$read-else: #a4a4a4;
+$color-cinnabar: #e34a3e;
+$color-coral-red: #ff4540;
+$color-crimson: #f63833;
+$color-violent-violet: #310e6d;
+$color-alabaster: #f8f8f8;
+$color-vermilion: #ff4200;
+
+// FONTS
+// stylelint-disable-next-line
+$font-primary: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$font-graphik-rbc-lc: "GraphikRBCLC", sans-serif;
+$font-kazimir-text: "KazimirText", sans-serif;
+$font-kazimir: "KazimirText", sans-serif;
+$font-obsidian: "Obsidian", sans-serif;
+$font-pf-regal-display-pro: "PFRegalDisplayPro", sans-serif;
+$font-pf-regal-text-pro: "PFRegalTextPro", sans-serif;
+
+// TRANSITIONS
+
+$transition-base: 0.3s ease;
+
+// EASING TRANSITIONS
+$duration-normal: 0.4s;
+$easing-back-out: cubic-bezier(0.25, 0.74, 0.22, 1.1); // http://cubic-bezier.com/#.25,.74,.22,1.1
+$easing-back-in: cubic-bezier(0.47, -0.1, 0.5, -0.06); // http://cubic-bezier.com/#.47,-0.1,.5,-.06
+$easing-out: ease-out;
+$easing-in: ease-in;
+
+// Settings
+$desktop: 1025;
+$desktop-xl: 1800;
+$laptop: 1440;
+$mobile: 375;
+$desktop-vh: 750;

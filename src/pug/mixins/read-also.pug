@@ -1,0 +1,19 @@
+mixin read-also(data = {})
+	.read-also.read-also--one(class=data.vertical ? 'read-also--vertical' : '')
+		h4.read-also__title Читайте также
+
+		.read-also__list
+			each item in data.items
+				a.read-also__item(
+					class=item.type ? `read-also__item--${item.type}` : ''
+					href=item.link || '#' data-router-link
+					data-info=item.info)
+					.read-also__category(class = item.class)!= item.category
+
+					if item.image
+						img.read-also__image(src=item.image alt="")
+
+					.read-also__subtitle!= item.title
+
+					if item.text
+						.read-also__text!= item.text

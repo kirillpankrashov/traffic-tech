@@ -1,0 +1,161 @@
+.banner-hor {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 79px;
+	margin-bottom: 80px;
+	width: vw(1090);
+	height: vw(210);
+
+	img {
+		width: 100%;
+		height: 100%;
+		transform: translateZ(0);
+	}
+
+	&__logo {
+		margin-bottom: vw(27);
+		width: vw(113);
+
+		svg {
+			height: vw(21);
+
+			@include desktop-xl {
+				height: px(21);
+			}
+		}
+
+		@include desktop-xl {
+			margin-bottom: px(27);
+			width: px(113);
+		}
+	}
+
+	&__title {
+		display: flex;
+		align-items: flex-end;
+		margin-bottom: vw(10);
+
+		.lozad {
+			width: vw(391);
+
+			@include desktop-xl {
+				width: px(391);
+			}
+		}
+
+		@include desktop-xl {
+			margin-bottom: px(10);
+		}
+	}
+
+	&__subtitle {
+		font-weight: 200;
+		font-size: vw(26);
+		line-height: 144%;
+
+		@include desktop-xl {
+			font-size: px(26);
+		}
+	}
+
+	&__model {
+		margin-left: vw(10);
+		font-weight: 200;
+		font-size: vw(26);
+		line-height: 1;
+
+		@include desktop-xl {
+			margin-left: px(10);
+			font-size: px(26);
+		}
+	}
+
+	&__win10 {
+		width: vw(143);
+
+		@include desktop-xl {
+			width: px(143);
+		}
+	}
+
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid $color-white;
+		height: vw(42);
+		min-width: vw(193);
+		font-size: vw(18);
+
+		@include desktop-xl {
+			height: px(42);
+			min-width: px(193);
+			font-size: px(18);
+		}
+
+		@include desktop {
+			&:hover {
+				color: $color-black;
+				background-color: $color-white;
+			}
+		}
+	}
+
+	@include desktop-xl {
+		width: px(1090);
+		height: px(210);
+	}
+
+	@include desktop {
+		transition: opacity 0.5s ease;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+
+	@include devices {
+		margin-top: 0;
+		width: 336px;
+		height: 260px;
+	}
+}
+
+.banner-mobile {
+	flex-basis: 100%;
+
+	.lozad {
+		width: 100%;
+	}
+}
+
+.banner-vert {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: vw(132);
+	height: vw(400);
+
+	img {
+		width: 100%;
+		height: 100%;
+		transform: translateZ(0);
+	}
+
+	@include desktop-xl {
+		margin-bottom: px(132);
+		height: px(400);
+	}
+
+	@include desktop {
+		transition: opacity 0.5s ease;
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}

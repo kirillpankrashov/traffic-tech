@@ -1,0 +1,417 @@
+.game {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-top: vw(101);
+	padding-bottom: vw(68);
+	min-height: 100vh;
+
+	&__bg-start {
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			height: 100%;
+			background: rgba($color-black, 0.7);
+			background-size: cover;
+			transition: all 0.5s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+
+			@include desktop-xl {
+				height: 100vh;
+			}
+
+			@include devices {
+				height: 100%;
+				background: rgba($color-black, 0.7);
+				background-size: cover;
+			}
+		}
+	}
+
+	&__step {
+		position: relative;
+		z-index: 1;
+		margin: 50px 0 0;
+
+		&--result {
+			display: flex;
+			padding: vw(68) vw(70) vw(45) vw(147);
+			background-color: $color-white;
+
+			.share-container & {
+				padding: px(68) px(70) px(45) px(147);
+			}
+
+			@include desktop-xl {
+				padding: px(68) px(70) px(45) px(147);
+			}
+		}
+
+		@include devices {
+			margin-top: 0;
+
+			&--result {
+				display: block;
+				margin-top: vmin(83);
+				padding: vmin(20) vmin(20) vmin(49);
+			}
+		}
+	}
+
+	&__image {
+		@include desktop {
+			flex: 0 0 34%;
+			margin-top: vw(-101, 1400);
+			margin-right: vw(-96, 1400);
+			margin-left: vw(-147, 1400);
+
+			picture {
+				width: vw(580, 1400);
+				height: vw(665, 1400);
+			}
+
+			.share-container & {
+				margin-top: px(-101);
+				margin-right: px(-96);
+				margin-left: px(-147);
+
+				picture {
+					width: px(580);
+					height: px(665);
+				}
+			}
+
+			@include desktop-xl {
+				margin-top: px(-101);
+				margin-right: px(-96);
+				margin-left: px(-147);
+
+				picture {
+					width: px(580);
+					height: px(665);
+				}
+			}
+		}
+
+		@include devices {
+			margin-top: vmin(-28);
+			margin-bottom: vmin(-6);
+			margin-left: vmin(14);
+
+			picture {
+				width: vmin(364);
+				height: vmin(278);
+			}
+		}
+	}
+
+	&__btnmore {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid $color-black;
+		height: vw(52);
+		min-width: vw(218);
+		font-family: $font-graphik-rbc-lc;
+		font-size: vw(15);
+
+		svg {
+			margin-left: vw(7);
+			width: vw(36);
+			height: vw(7);
+
+			@include desktop-xl {
+				margin-left: px(7);
+				width: px(36);
+				height: px(7);
+			}
+
+			@include devices {
+				margin-left: vmin(7);
+				width: vmin(36);
+				height: vmin(25);
+			}
+		}
+
+		@include desktop-xl {
+			height: px(52);
+			min-width: px(218);
+			font-size: px(15);
+		}
+
+		@include desktop {
+			&:hover {
+				color: $color-white;
+				background-color: $color-black;
+			}
+		}
+
+		@include devices {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto;
+			width: vmin(218);
+			height: vmin(52);
+			font-size: vmin(15);
+			line-height: vmin(15);
+		}
+	}
+
+	&__title {
+		margin-top: 0;
+		margin-bottom: vw(30);
+		font-weight: 700;
+		font-size: vw(64);
+		line-height: vw(46);
+
+		&--small {
+			margin-bottom: vw(51);
+			font-family: $font-graphik-rbc-lc;
+			font-size: vw(40);
+			line-height: vw(23);
+			letter-spacing: 0.5px;
+
+			@include desktop-xl {
+				// stylelint-disable-next-line
+				font-size: px(40) !important;
+			}
+		}
+
+		.share-container & {
+			margin-bottom: px(30);
+			// stylelint-disable-next-line
+			font-size: px(40) !important;
+		}
+
+		@include desktop-xl {
+			margin-bottom: px(30);
+			font-size: px(64);
+			line-height: px(46);
+		}
+
+		@include devices {
+			margin-bottom: vmin(20);
+			font-size: vmin(32);
+			line-height: vmin(32);
+
+			&--small {
+				margin-top: vmin(-2);
+				margin-bottom: vmin(50);
+				font-weight: 600;
+				font-size: vmin(32);
+			}
+		}
+	}
+
+	&__intro {
+		margin-bottom: vw(40);
+		border-bottom: 1px solid $color-white;
+		padding-bottom: vw(45);
+		font-family: $font-kazimir;
+		font-size: vw(18);
+		line-height: 130%;
+
+		@include desktop-xl {
+			margin-bottom: px(40);
+			padding-bottom: px(45);
+			font-size: px(18);
+		}
+
+		@include devices {
+			font-size: vmin(18);
+			line-height: vmin(24);
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: vw(30);
+		font-weight: 600;
+		font-size: vw(30);
+		line-height: vw(46);
+
+		@include desktop-xl {
+			margin-bottom: px(30);
+			font-size: px(30);
+			line-height: px(46);
+		}
+
+		@include devices {
+			margin-bottom: vmin(61);
+			font-size: vmin(18);
+			line-height: vmin(24);
+		}
+	}
+
+	&__btn {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		font-size: vw(15);
+		line-height: 1.2;
+		background-color: transparent;
+
+		&--start {
+			border: 1px solid $color-white;
+			height: vw(52);
+			min-width: vw(218);
+			color: $color-white;
+
+			@include desktop-xl {
+				height: px(52);
+				min-width: px(218);
+			}
+
+			@include devices {
+				margin-bottom: vmin(86);
+				height: vmin(55);
+				min-width: vmin(220);
+				font-size: vmin(17);
+				line-height: vmin(24);
+			}
+
+			@include desktop {
+				&:hover {
+					color: $color-black;
+					background-color: $color-white;
+				}
+			}
+		}
+
+		@include desktop-xl {
+			font-size: px(15);
+		}
+	}
+
+	&__randomizer {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: vw(50);
+		border: 1px solid $color-white;
+		padding: vw(50);
+		width: vw(625);
+		height: vw(188);
+		font-size: vw(24);
+		line-height: 110%;
+		transition: all 0.5s linear;
+		cursor: pointer;
+
+		.is-end & {
+			border-color: $color-black;
+			color: $color-black;
+			background-color: $color-white;
+		}
+
+		.share-container & {
+			margin-bottom: px(50);
+			padding: px(50);
+			width: px(610);
+			height: px(181.58);
+			font-size: px(24);
+		}
+
+		@include desktop-xl {
+			margin-bottom: px(50);
+			padding: px(50);
+			width: px(610);
+			height: px(181.58);
+			font-size: px(24);
+		}
+
+		@include devices {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: vmin(80);
+			padding: 0;
+			width: vmin(298);
+			height: vmin(161);
+			font-size: vmin(19);
+			line-height: vmin(22);
+		}
+	}
+
+	&__btn-restart {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: none;
+		height: vw(56);
+		min-width: vw(228);
+		font-size: vw(15);
+		line-height: 1.2;
+		color: $color-white;
+		background: url("../images/sprites/svg/arrow-game.svg") center center no-repeat;
+		background-size: contain;
+
+		@include desktop-xl {
+			height: px(52);
+			min-width: px(218);
+			font-size: px(15);
+		}
+
+		@include desktop {
+			transition: opacity 0.7s ease;
+
+			&:hover {
+				opacity: 0.7;
+			}
+		}
+
+		@include devices {
+			margin-bottom: vmin(68);
+			width: vmin(211);
+			height: vmin(54);
+			font-size: vmin(15);
+			line-height: vmin(15);
+		}
+	}
+
+	&__text {
+		font-family: $font-kazimir;
+		font-size: vw(24);
+		line-height: 150%;
+
+		p {
+			margin-bottom: vw(33);
+
+			@include desktop-xl {
+				margin-bottom: px(33);
+			}
+
+			@include devices {
+				margin-bottom: vmin(40);
+			}
+		}
+
+		.share-container & {
+			font-size: px(24);
+		}
+
+		@include desktop-xl {
+			font-size: px(24);
+		}
+
+		@include devices {
+			font-size: vmin(18);
+			line-height: vmin(27);
+		}
+	}
+
+	&.is-end {
+		&::after {
+			@include devices {
+				// stylelint-disable-next-line
+				//height: vmin(729);
+			}
+		}
+	}
+
+	@include desktop-xl {
+		padding-top: px(101);
+		padding-bottom: px(68);
+	}
+}

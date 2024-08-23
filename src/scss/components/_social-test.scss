@@ -1,0 +1,303 @@
+.social {
+	$p: &;
+
+	display: flex;
+	flex-shrink: 0;
+	font-family: $font-graphik-rbc-lc;
+
+	&__item {
+		margin-left: 10px;
+		border: 0;
+		padding: 0;
+		font-weight: 700;
+		text-decoration: underline;
+		color: $color-white;
+		background: transparent;
+
+		&:not(:first-of-type) {
+			margin-left: 11px;
+		}
+
+		svg {
+			display: none;
+			width: 100%;
+			height: 100%;
+		}
+
+		&[data-social="facebook"] {
+			svg {
+				width: 18px;
+				height: 27px;
+			}
+		}
+
+		&[data-social="vk"] {
+			svg {
+				width: 26px;
+				height: 16px;
+			}
+		}
+
+		&[data-social="ok"] {
+			svg {
+				width: 18px;
+				height: 25px;
+			}
+		}
+
+		&[data-social="twitter"] {
+			svg {
+				width: 26px;
+				height: 22px;
+			}
+		}
+
+		#{$p}--icon & {
+			width: 80px;
+			height: 40px;
+
+			span {
+				display: none;
+			}
+
+			svg {
+				display: block;
+				color: $color-white;
+			}
+		}
+
+		@include desktop {
+			&:hover {
+				text-decoration: none;
+
+				#{$p}--icon & {
+					border-color: $color-black;
+					background-color: $color-black;
+
+					svg {
+						color: $color-white;
+					}
+				}
+			}
+
+			#{$p}--icon & {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 0 0 -1px;
+				border: 1px solid $color-silver;
+				transition: $duration-normal;
+
+				svg {
+					transition: $duration-normal;
+				}
+			}
+		}
+
+		@include laptop {
+			&[data-social="facebook"] {
+				svg {
+					width: vw(18, 1400);
+					height: vw(27, 1400);
+				}
+			}
+
+			&[data-social="vk"] {
+				svg {
+					width: vw(26, 1400);
+					height: vw(16, 1400);
+				}
+			}
+
+			&[data-social="ok"] {
+				svg {
+					width: vw(18, 1400);
+					height: vw(25, 1400);
+				}
+			}
+
+			&[data-social="twitter"] {
+				svg {
+					width: vw(26, 1400);
+					height: vw(22, 1400);
+				}
+			}
+
+			#{$p}--icon & {
+				width: vw(80, 1400);
+				height: vw(40, 1400);
+			}
+		}
+
+		@include devices {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 vmin(10);
+			width: vmin(40);
+			height: vmin(40);
+			font-size: 0;
+			text-decoration: none;
+
+			&:not(:first-of-type) {
+				margin: 0 vmin(10);
+			}
+
+			svg {
+				position: relative;
+				display: block;
+			}
+
+			span {
+				display: none;
+			}
+
+			&[data-social="facebook"] {
+				svg {
+					width: vmin(15);
+					height: vmin(23);
+				}
+			}
+
+			&[data-social="vk"] {
+				svg {
+					width: vmin(26);
+					height: vmin(16);
+				}
+			}
+
+			&[data-social="ok"] {
+				svg {
+					width: vmin(16);
+					height: vmin(23);
+				}
+			}
+
+			&[data-social="twitter"] {
+				svg {
+					width: vmin(22);
+					height: vmin(19);
+				}
+			}
+
+			#{$p}--icon & {
+				margin: 0;
+				border-right: 1px solid $color-silver;
+				width: vmin(68);
+				height: vmin(36);
+
+				svg {
+					margin: auto;
+				}
+
+				&:last-child {
+					border-right: none;
+				}
+			}
+		}
+	}
+
+	&__text {
+		#{$p}--icon & {
+			display: none;
+		}
+
+		@include devices {
+			display: none;
+		}
+	}
+
+	&--home {
+		.social__item {
+			@include devices {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 0 vmin(10);
+				width: vmin(32);
+				height: vmin(32);
+				font-size: 0;
+				text-decoration: none;
+
+				&:not(:first-of-type) {
+					margin: 0 vmin(10);
+				}
+
+				svg {
+					position: relative;
+					display: block;
+				}
+
+				&--fb {
+					position: relative;
+					left: vmin(8);
+
+					svg {
+						margin-top: vmin(1.5);
+						width: vmin(15);
+						height: vmin(32);
+					}
+				}
+
+				&--vk {
+					position: relative;
+					left: vmin(-12);
+
+					svg {
+						width: vmin(28);
+						height: vmin(32);
+					}
+				}
+
+				&--ok svg {
+					margin-top: vmin(1);
+					width: vmin(15);
+					height: vmin(32);
+				}
+
+				&--tw {
+					position: relative;
+					left: vmin(20);
+
+					svg {
+						width: vmin(25);
+						height: vmin(32);
+					}
+				}
+			}
+		}
+
+		@include devices {
+			margin-bottom: vmin(-14);
+		}
+	}
+
+	&--small {
+		font-size: 14px;
+		line-height: (26 / 14);
+
+		.social__item {
+			position: relative;
+			top: -2px;
+			margin-left: 10px;
+			font-weight: 700;
+
+			&:first-of-type {
+				margin-left: 11px;
+			}
+		}
+	}
+
+	@include devices {
+		align-items: center;
+		justify-content: center;
+		padding: 0 vmin(50) 0 vmin(40);
+		width: 100%;
+
+		&#{$p}--icon {
+			flex-wrap: wrap;
+			justify-content: start;
+			padding: 0;
+		}
+	}
+}

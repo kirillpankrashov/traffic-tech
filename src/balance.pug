@@ -1,0 +1,89 @@
+extends pug/base
+prepend vars
+	- title = 'Title'
+	- description = 'Description'
+	- image = '/images/share/' // url картинки для шера
+
+append vars
+	- link.appleTouchIcon180x180 = 'favicon/apple-touch-icon.png'
+	- link.icon32x32 = 'favicon/favicon-32x32.png'
+	- link.icon16x16 = 'favicon/favicon-16x16.png'
+	- link.manifest = 'favicon/site.webmanifest'
+	- link.maskIcon.href = 'favicon/safari-pinned-tab.svg'
+	- link.maskIcon.color = '#5bbad5'
+	- meta.msapplicationTileColor = '#ffffff'
+	- meta.msapplicationTileImage = 'favicon/mstile-144x144.png'
+	- meta.themeColor = '#ffffff'
+	- body.attrs = {"data-barba": "wrapper"}
+
+block content
+	.section.balance-page
+		include pug/components/header
+		.main-box
+			include pug/components/sidebar
+			.main-box__container
+
+				.main-box__section
+
+					+top-text('Текущий Баланс')
+					.down-side-grid-3
+						.one-side.l
+							p.gray-text
+								| Доступно USDT
+							h1.usdt.available 0
+						.one-side.l.middle
+							p.gray-text
+								| В холде USDT
+							h1.usdt.on-hold 0
+						.one-side.button
+							button.submit.dep.btn-color-yellow(data-popup="balance")
+								p Пополнить
+							form.forma#transfer-to-hold
+								//- input(type='hidden' name='_token' value='yZAGMJEMFB1NKQY746NDrcS2u2OJWZchVZkIWf5Z')
+								button.submit.btn-color-yellow(type='submit')
+									p Перевести
+								label.form-group
+									input#amount.form-control(type='number' placeholder='0' name='amount' required)
+								p.error
+					.one-side.flex
+				.main-box__section
+					+top-text('История пополнений')
+					table.main-box__table#table-balance
+						thead
+							tr
+								th
+									p ID
+								th 
+									p Дата
+								th 
+									p Сумма
+								th 
+									p Адрес Кошелька
+								th 
+									p Коментарий
+								th 
+									p Статус
+						tbody
+							
+
+	.popup(data-form="balance")
+		.popup__overlay
+		button(type='button').popup__close
+			svg(width='26' height='26' viewbox='0 0 26 26' fill='none')
+				path(d='M6.63672 6.63477L19.3646 19.3627' stroke='currentColor' stroke-width='2')
+				path(d='M19.3672 6.63477L6.63926 19.3627' stroke='currentColor' stroke-width='2')
+
+		.popup__wapper
+			.popup__title
+				h3 Пополнить Баланс
+			form.popup__form
+				.popup__fields
+					label
+						input(type="number" name="amount" placeholder="Сумма")
+					label
+						input(type="text" name="wallet" placeholder="Адрес кошелька")
+					label.textarea.w-100
+						textarea(type="text" name="comment" placeholder="Коментарий")
+ 
+				button.submit.btn-color-yellow(type='submit')
+					p добавить

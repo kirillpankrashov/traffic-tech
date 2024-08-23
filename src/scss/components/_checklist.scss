@@ -1,0 +1,368 @@
+.checklist {
+	margin: 0;
+	border: 1px solid $color-silver;
+	border-radius: 8px;
+	padding: 67px;
+
+	&__head {
+		display: flex;
+		justify-content: space-between;
+		margin: 0 0 50px;
+		padding: 0 0 0 40px;
+		width: 100%;
+		font-family: $font-graphik-rbc-lc;
+		font-weight: 500;
+		font-size: 32px;
+		line-height: 1;
+
+		@include devices {
+			flex-direction: column;
+			margin: 0 0 vmin(27);
+			padding: 0;
+			width: 100%;
+			font-size: vmin(24);
+		}
+	}
+
+	&__left {
+		position: relative;
+
+		@include devices {
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			height: 2em;
+		}
+	}
+
+	&__image {
+		flex: none;
+		overflow: hidden;
+		width: 277px;
+
+		img {
+			image-rendering: pixelated;
+			transform: translateZ(0);
+
+			@include devices {
+				image-rendering: auto;
+			}
+		}
+
+		@include devices {
+			width: 100%;
+		}
+	}
+
+	&__right {
+		padding-left: 15px;
+
+		@include devices {
+			padding-left: 0;
+		}
+	}
+
+	&__wrapper {
+		margin-bottom: 85px;
+
+		@include devices {
+			margin-bottom: vmin(50);
+		}
+	}
+
+	&__item {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-bottom: 100px;
+		border: none;
+		cursor: pointer;
+
+		.js-check-input {
+			display: none;
+		}
+
+		.js-check-input:checked ~ .checklist__check {
+			border: 1px solid $color-black;
+			background: $color-sys;
+
+			svg {
+				opacity: 1;
+			}
+		}
+
+		span {
+			display: flex;
+			flex-shrink: 0;
+			align-items: center;
+			justify-content: center;
+			margin-top: 4px;
+			border: 1px solid #c7c7c7;
+			border-radius: 4px;
+			width: 30px;
+			height: 30px;
+			transition: border 0.3s ease-in-out;
+
+			@include devices {
+				width: vmin(30);
+				height: vmin(30);
+				background: $color-white;
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include desktop {
+			&:hover {
+				span {
+					border-color: $color-black;
+				}
+			}
+		}
+
+		@include devices {
+			margin-bottom: vmin(90);
+			max-width: none;
+
+			&:last-child {
+				margin-bottom: vmin(90);
+			}
+		}
+	}
+
+	&__check {
+		svg {
+			width: 70%;
+			opacity: 0;
+		}
+	}
+
+	&__title {
+		margin-bottom: 20px;
+		font-family: $font-graphik-rbc-lc;
+		font-weight: 500;
+		font-size: 41px;
+		line-height: 1.02041;
+
+		@include devices {
+			margin-bottom: vmin(24);
+			padding-left: 0;
+			font-size: vmin(26);
+			text-align: center;
+		}
+	}
+
+	&__text {
+		font-size: 17px;
+		line-height: 1.55;
+
+		@include devices {
+			font-size: vmin(17);
+		}
+	}
+
+	&__label {
+		position: relative;
+		z-index: 1;
+		display: block;
+		font-family: $font-kazimir;
+		font-size: 17px;
+		line-height: (25 / 17);
+		cursor: pointer;
+
+		@include desktop {
+			transition: color $duration-normal;
+		}
+
+		@include devices {
+			margin-bottom: 0;
+			font-size: vmin(17);
+		}
+	}
+
+	&__link {
+		position: relative;
+		display: flex;
+		width: 300px;
+		height: 40px;
+
+		@include devices {
+			margin-bottom: vmin(20);
+			width: 100%;
+			height: vmin(38);
+		}
+	}
+
+	&__string {
+		overflow: hidden;
+		border: 1px solid $color-black;
+		border-radius: 8px;
+		padding: 4px 23px;
+		width: 389px;
+		font-family: $font-graphik-rbc-lc;
+		font-size: 13px;
+		line-height: 31px;
+		white-space: nowrap;
+		color: rgba($color-black, 0.5);
+
+		@include devices {
+			padding: vmin(3) vmin(21);
+			width: 100%;
+			height: vmin(38);
+			font-size: vmin(13);
+			line-height: vmin(31);
+		}
+	}
+
+	&__social {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+
+		@include devices {
+			flex-flow: column;
+		}
+	}
+
+	&__copy {
+		position: absolute;
+		right: 0;
+		outline: none;
+		border: 1px solid $color-black;
+		border-radius: 8px;
+		width: 150px;
+		height: 40px;
+		font-family: $font-graphik-rbc-lc;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1;
+		color: $color-black;
+		background: $color-white;
+		cursor: pointer;
+
+		&.active {
+			color: $color-white;
+			background: $color-black;
+		}
+
+		@include desktop {
+			transition: background 0.3s linear, color 0.3s linear;
+
+			&:hover {
+				color: $color-white;
+				background: $color-black;
+			}
+		}
+
+		@include devices {
+			width: vmin(151);
+			height: vmin(38);
+			font-size: vmin(15);
+			line-height: vmin(1);
+		}
+	}
+
+	&__share {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-left: 20px;
+		width: 190px;
+
+		@include devices {
+			margin-left: 0;
+			width: 70vmin;
+		}
+	}
+
+	&__button {
+		border: 1px solid $color-black;
+		border-radius: 50%;
+		width: 40px;
+		height: 40px;
+
+		@include desktop {
+			transition: background 0.3s linear, color 0.3s linear;
+
+			&:hover {
+				color: $color-white;
+				background: $color-black;
+			}
+		}
+	}
+
+	&__footnote {
+		margin-bottom: 40px;
+		padding-left: 40px;
+		font-family: $font-graphik-rbc-lc;
+		font-size: 15px;
+		line-height: (22 / 15);
+		color: rgba($color-black, 0.6);
+
+		@include devices {
+			margin-bottom: vmin(40);
+			padding-left: vmin(40);
+			font-size: vmin(15);
+		}
+	}
+
+	&__shared {
+		position: absolute;
+		left: -2px;
+		right: -2px;
+		top: -4px;
+		bottom: -4px;
+		z-index: 1;
+		display: none;
+		align-items: center;
+		justify-content: center;
+		background-color: $color-white;
+	}
+
+	&__shared-btn {
+		display: block;
+		outline: none;
+		border: 1px solid $color-black;
+		border-radius: 8px;
+		width: 150px;
+		height: 40px;
+		font-family: $font-graphik-rbc-lc;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 1;
+		color: $color-black;
+		background: $color-white;
+		cursor: pointer;
+
+		@include desktop {
+			transition: background 0.3s linear, color 0.3s linear;
+
+			&:hover {
+				color: $color-white;
+				background: $color-black;
+			}
+		}
+
+		@include devices {
+			width: vmin(151);
+			height: vmin(38);
+			font-size: vmin(15);
+			line-height: vmin(1);
+		}
+	}
+
+	@include devices {
+		margin: 0 0 0 vmin(-20);
+		border-right: none;
+		border-bottom: none;
+		border-left: none;
+		padding: vmin(34) vmin(20);
+		width: calc(100% + #{vmin(40)});
+		min-height: auto;
+	}
+}

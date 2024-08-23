@@ -1,0 +1,7 @@
+mixin tocBlock(title)
+	.article__toc-block&attributes(attributes)
+		header.article__toc-header
+			+svg("icon-arrow-right")
+			h2.article__toc-title!= title
+
+		block

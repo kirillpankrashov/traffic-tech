@@ -1,0 +1,53 @@
+.other-materials {
+	h3 {
+		margin-top: 0;
+		margin-bottom: vw(10);
+		font-weight: 700;
+		font-size: vw(22);
+		line-height: vw(49);
+
+		@include desktop-xl {
+			margin-bottom: px(10);
+			font-size: px(22);
+			line-height: px(49);
+		}
+	}
+
+	&__item {
+		display: flex;
+		flex-direction: column;
+		margin-top: -1px;
+		border: 1px solid #c7c7c7;
+		padding: vw(28) vw(23);
+
+		@include desktop-xl {
+			padding: px(32) px(23);
+		}
+	}
+
+	&__cat {
+		margin-bottom: vw(5);
+		font-size: vw(14);
+		color: $color-sys;
+
+		@include desktop-xl {
+			margin-bottom: px(5);
+			font-size: px(14);
+		}
+	}
+
+	&__title {
+		font-weight: 700;
+		font-size: vw(18);
+
+		@include desktop-xl {
+			font-size: px(18);
+		}
+
+		@include desktop {
+			&:hover {
+				color: $color-sys;
+			}
+		}
+	}
+}

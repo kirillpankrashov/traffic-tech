@@ -1,0 +1,80 @@
+extends pug/base
+prepend vars
+	- title = 'Title'
+	- description = 'Description'
+	- image = '/images/share/' // url картинки для шера
+
+append vars
+	- link.appleTouchIcon180x180 = 'favicon/apple-touch-icon.png'
+	- link.icon32x32 = 'favicon/favicon-32x32.png'
+	- link.icon16x16 = 'favicon/favicon-16x16.png'
+	- link.manifest = 'favicon/site.webmanifest'
+	- link.maskIcon.href = 'favicon/safari-pinned-tab.svg'
+	- link.maskIcon.color = '#5bbad5'
+	- meta.msapplicationTileColor = '#ffffff'
+	- meta.msapplicationTileImage = 'favicon/mstile-144x144.png'
+	- meta.themeColor = '#ffffff'
+	- body.attrs = {"data-barba": "wrapper"}
+
+block content
+	.section.requisites-page
+		include pug/components/header
+		.main-box
+			include pug/components/sidebar
+			
+			.main-box__container
+				.main-box__section.requisites
+					h2 Реквизиты
+					p.white У вас еще нет реквизитов ?
+					.submit(data-popup="requisites")
+						p Добавить
+					table.main-box__table#table-requisites
+						thead
+							tr
+								th 
+									p Номер Карты/Счёта
+								th 
+									p Номер телефона
+								th 
+									p Дата добавления
+								//- th 
+								//- 	p Сумма (₽)
+								th 
+									p Владелец
+								//- th 
+								//- 	p Метод
+								th 
+									p Банк
+								//- th 
+								//- 	p Редактировать
+								//- th 
+							//- 	p Удалить
+						tbody
+
+	.popup(data-form="requisites")
+		.popup__overlay
+		button(type='button').popup__close
+			svg(width='26' height='26' viewbox='0 0 26 26' fill='none')
+				path(d='M6.63672 6.63477L19.3646 19.3627' stroke='currentColor' stroke-width='2')
+				path(d='M19.3672 6.63477L6.63926 19.3627' stroke='currentColor' stroke-width='2')
+
+		.popup__wapper
+			.popup__title
+				h3 Добавить реквизиты
+			form.popup__form
+				.popup__fields
+					label
+						input#card(type="number" name="card" placeholder="Номер Карты/Счёта")
+					label
+						input#number(type="number" name="number" placeholder="Номер телефона")
+					label
+						input#name(type="text" name="name" placeholder="Владелец")
+					label
+						//- input#bank(type="text" name="bank" placeholder="Банк")
+						select#bank(name="bank")
+							option(value="Сбербанк") Сбербанк
+							option(value="Альфабанк") Альфабанк
+							option(value="Тиньков") Тиньков
+							option(value="Райфайзен") Райфайзен 
+				button.submit.btn-color-yellow(type='submit')
+					p добавить

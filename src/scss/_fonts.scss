@@ -1,0 +1,45 @@
+// stylelint-disable no-empty-source
+// @include font-face("../fonts/FontName/FontName", "FontName", 400, normal);
+
+// GraphikRBCLC
+
+@include font-face("../fonts/GraphikRBCLC/GraphikRBCLC-Light", "GraphikRBCLC", 300, normal);
+@include font-face("../fonts/GraphikRBCLC/GraphikRBCLC-Regular", "GraphikRBCLC", 400, normal);
+@include font-face("../fonts/GraphikRBCLC/GraphikRBCLC-RegularItalic", "GraphikRBCLC", 400, italic);
+@include font-face("../fonts/GraphikRBCLC/GraphikRBCLC-Medium", "GraphikRBCLC", 500, normal);
+@include font-face("../fonts/GraphikRBCLC/GraphikRBCLC-MediumItalic", "GraphikRBCLC", 500, italic);
+@include font-face("../fonts/GraphikRBCLC/GraphikRBCLC-SemiBold", "GraphikRBCLC", 600, normal);
+@include font-face("../fonts/GraphikRBCLC/GraphikRBCLC-Bold", "GraphikRBCLC", 700, normal);
+@include font-face("../fonts/GraphikRBCLC/GraphikRBCLC-BoldItalic", "GraphikRBCLC", 700, italic);
+
+// KazimirText
+
+@include font-face("../fonts/KazimirText/KazimirText-Regular", "KazimirText", 400, normal);
+@include font-face("../fonts/KazimirText/KazimirText-RegularItalic", "KazimirText", 400, italic);
+@include font-face("../fonts/KazimirText/KazimirText-Medium", "KazimirText", 500, normal);
+@include font-face("../fonts/KazimirText/KazimirText-MediumItalic", "KazimirText", 500, italic);
+@include font-face("../fonts/KazimirText/KazimirText-Semibold", "KazimirText", 600, normal);
+@include font-face("../fonts/KazimirText/KazimirText-Bold", "KazimirText", 700, normal);
+@include font-face("../fonts/KazimirText/KazimirText-BoldItalic", "KazimirText", 700, italic);
+@include font-face("../fonts/KazimirText/KazimirText-Black", "KazimirText", 900, normal);
+@include font-face("../fonts/KazimirText/KazimirText-BlackItalic", "KazimirText", 900, italic);
+
+// Obsidian
+
+@include font-face("../fonts/Obsidian/Obsidian-Roman", "Obsidian", 400, normal);
+
+// PFRegalDisplayPro
+
+@include font-face("../fonts/PFRegalDisplayPro/PFRegalDisplayPro-Regular", "PFRegalDisplayPro", 400, normal);
+@include font-face("../fonts/PFRegalDisplayPro/PFRegalDisplayPro-RegularItalic", "PFRegalDisplayPro", 400, italic);
+@include font-face("../fonts/PFRegalDisplayPro/PFRegalDisplayPro-Bold", "PFRegalDisplayPro", 700, normal);
+@include font-face("../fonts/PFRegalDisplayPro/PFRegalDisplayPro-BoldItalic", "PFRegalDisplayPro", 700, italic);
+
+// PFRegalTextPro
+
+@include font-face("../fonts/PFRegalTextPro/PFRegalTextPro-RegularB", "PFRegalTextPro", 400, normal);
+@include font-face("../fonts/PFRegalTextPro/PFRegalTextPro-RegularBItalic", "PFRegalTextPro", 400, italic);
+@include font-face("../fonts/PFRegalTextPro/PFRegalTextPro-Medium", "PFRegalTextPro", 500, normal);
+@include font-face("../fonts/PFRegalTextPro/PFRegalTextPro-MediumItalic", "PFRegalTextPro", 500, italic);
+@include font-face("../fonts/PFRegalTextPro/PFRegalTextPro-Bold", "PFRegalTextPro", 700, normal);
+@include font-face("../fonts/PFRegalTextPro/PFRegalTextPro-BoldItalic", "PFRegalTextPro", 700, italic);

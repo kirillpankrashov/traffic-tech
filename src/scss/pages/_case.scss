@@ -1,0 +1,15 @@
+.case {
+	margin-top: vw(95);
+	margin-bottom: vw(100);
+
+	.article__h3 {
+		&.italic {
+			margin-bottom: 0;
+		}
+	}
+
+	@include desktop-xl {
+		margin-top: px(95);
+		margin-bottom: px(100);
+	}
+}

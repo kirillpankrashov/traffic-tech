@@ -1,0 +1,35 @@
+extends pug/base
+prepend vars
+	- title = 'Title'
+	- description = 'Description'
+	- image = '/images/share/' // url картинки для шера
+
+append vars
+	- link.appleTouchIcon180x180 = 'favicon/apple-touch-icon.png'
+	- link.icon32x32 = 'favicon/favicon-32x32.png'
+	- link.icon16x16 = 'favicon/favicon-16x16.png'
+	- link.manifest = 'favicon/site.webmanifest'
+	- link.maskIcon.href = 'favicon/safari-pinned-tab.svg'
+	- link.maskIcon.color = '#5bbad5'
+	- meta.msapplicationTileColor = '#ffffff'
+	- meta.msapplicationTileImage = 'favicon/mstile-144x144.png'
+	- meta.themeColor = '#ffffff'
+	- body.attrs = {"data-barba": "wrapper"}
+
+block content
+	.auth
+		.popup__wapper
+			.popup__title
+				h3 Войти
+			form.popup__form
+
+				.popup__fields
+					p.error
+					label
+						input#login(type="text" name="login" placeholder="логин")
+					label
+						input#password(type="password" name="number" placeholder="пароль")
+
+
+				button.submit.btn-color-yellow(type='submit')
+					p Войти

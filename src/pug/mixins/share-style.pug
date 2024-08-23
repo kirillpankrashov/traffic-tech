@@ -1,0 +1,20 @@
+mixin shareStyle(data)
+	.shareStyle(class=data && data.type ? `shareStyle--${data.type}` : '')
+		.shareStyle__caption
+			| Поделиться:
+
+		button.shareStyle__button(type="button" data-social="facebook")
+			span Facebook
+			+svg('social-fb')
+
+		button.shareStyle__button(type="button" data-social="twitter")
+			span Twitter
+			+svg('social-tw')
+
+		button.shareStyle__button(type="button" data-social="vk")
+			span Vkontakte
+			+svg('social-vk')
+
+		button.shareStyle__button(type="button" data-social="ok")
+			span Одноклассники
+			+svg('social-ok')
